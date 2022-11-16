@@ -20,7 +20,7 @@
 */
 
 //CODE HERE
-class employee  {
+class Employee  {
     constructor(name, shifts) {
         this.name = name;
         this.shifts = shifts;
@@ -44,7 +44,7 @@ class employee  {
 */
 
 //CODE HERE
-let empOne = new employee('Korey', 'Monay, Wednesday, Friday');
+let empOne = new Employee('Korey', 'Monday, Wednesday, Friday');
 
 
 /*
@@ -101,36 +101,32 @@ console.log(empTwo)
 */
 
 //CODE HERE
- class managers extends employee {
-constructor(name, shifts, employees){
-    super(name, shifts)
-    this.employees = employees;
-
-}
-getEmployees(){console.log(`${this.name} manages ${this.employees}`)}
-addEmployees(emp){
-    let employees = {employees}
-    employees.push(emp)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
+ class Manager extends Employee {
+    constructor(name, shifts, employees){
+        super(name, shifts)
+        this.employees = employees;
+    }
+    getEmployees(){
+        console.log(`${this.name} manages ${this.employees}`)
+    }
+    addEmployee(emp){
+        this.employees.push(emp)
+    }
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
     Create a new instance of your class.
@@ -144,7 +140,7 @@ addEmployees(emp){
 */
 
 //CODE HERE
- let manager = new managers('Tom', 'Only Nights', 'Dre, Smitty');
+ let manager = new Manager('Tom', 'Only Nights', ['Dre, Smitty']);
 
 /*
     Call the `getEmployees` method on the
@@ -162,8 +158,7 @@ manager.getEmployees();
 */
 
 //CODE HERE 
- manager.addEmployees('Brisk')
- console.log(employees)
+ manager.addEmployee('Nick');
 
 /*
     Call the `getEmployees` method on the
@@ -172,3 +167,4 @@ manager.getEmployees();
 */
 
 //CODE HERE
+manager.getEmployees()

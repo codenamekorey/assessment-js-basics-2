@@ -211,20 +211,19 @@ console.log(filteredFood);
 */
 
 //CODE HERE
-let property = 'rating';
-let number = 1;
-let type = 'above';
-
 const filterByProperty = (property, number, type) =>{
-let filteredArray = foodArr.filter((cb) =>{
-    if(type === 'above'){
-        return cb.property > number;
-    } 
-    if (type === 'below'){
-        return cbobj.property < number;
+    const filtered = foodArr.filter(food => {
+        if(type === 'above'){
+            return food[property] >= number
+        } else {
+            return food[property] <= number
+        }
+    })
+        return filtered
     }
-})
-}
+
+    
+
 
 
 
@@ -236,4 +235,4 @@ let filteredArray = foodArr.filter((cb) =>{
 */
 
 //CODE HERE
-console.log(filterByProperty('rating', 1, 'above'));
+console.log(filterByProperty('price', 20, 'below'))
